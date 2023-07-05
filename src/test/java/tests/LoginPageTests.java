@@ -4,11 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DemoqaLoginPage;
 
-public class LoginPage extends BaseTest {
+public class LoginPageTests extends BaseTest {
 
     @Test
     public void fillUsernameFieldTest() throws InterruptedException {
-        String title = header.getPageTitle();
+        String title = menuComponent.getPageTitle();
         Assert.assertEquals(title, "DEMOQA");
 
         DemoqaLoginPage demoqaLoginPage = new DemoqaLoginPage(driver);
@@ -20,7 +20,7 @@ public class LoginPage extends BaseTest {
 
     @Test
     public void fillUPasswordFieldTest() throws InterruptedException {
-        String title = header.getPageTitle();
+        String title = menuComponent.getPageTitle();
         Assert.assertEquals(title, "DEMOQA");
 
         DemoqaLoginPage demoqaLoginPage = new DemoqaLoginPage(driver);
@@ -32,7 +32,7 @@ public class LoginPage extends BaseTest {
 
     @Test
     public void loginButtonTest() throws InterruptedException {
-        String title = header.getPageTitle();
+        String title = menuComponent.getPageTitle();
         Assert.assertEquals(title, "DEMOQA");
 
         DemoqaLoginPage demoqaLoginPage = new DemoqaLoginPage(driver);
@@ -44,7 +44,7 @@ public class LoginPage extends BaseTest {
 
     @Test
     public void newUserButtonTest() throws InterruptedException {
-        String title = header.getPageTitle();
+        String title = menuComponent.getPageTitle();
         Assert.assertEquals(title, "DEMOQA");
 
         DemoqaLoginPage demoqaLoginPage = new DemoqaLoginPage(driver);

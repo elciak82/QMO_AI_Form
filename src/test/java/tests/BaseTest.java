@@ -5,13 +5,12 @@ import helpers.Driver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-import pages.Header;
+import pages.MenuComponent;
 
 
 public class BaseTest {
     public WebDriver driver;
-    public Header header;
+    public MenuComponent menuComponent;
     public WebDriver getDriver() {
         return driver;
     }
@@ -20,7 +19,7 @@ public class BaseTest {
     public void setUp() {
         driver = Driver.initializeWebDriver();
         driver.get(Configuration.getConfiguration().getSiteURL());
-        header = new Header(driver);
+        menuComponent = new MenuComponent(driver);
     }
 
     @AfterMethod
