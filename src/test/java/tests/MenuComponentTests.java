@@ -2,7 +2,6 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.DemoqaLoginPage;
 import pages.MenuComponent;
 
 public class MenuComponentTests extends BaseTest {

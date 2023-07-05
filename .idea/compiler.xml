@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="prestashop" />
+        <module name="QMO_AI_Form" />
       </profile>
     </annotationProcessing>
   </component>
