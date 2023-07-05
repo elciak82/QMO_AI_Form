@@ -6,14 +6,10 @@ import java.util.Properties;
 public class Configuration {
     private static final String SITE_ADDRESS = "test.site.url";
     private static final String DRIVER_LOCATION = "driver.location";
-    private static final String EMAIL = "email";
-    private static final String PASSWORD = "password";
     private static Configuration configuration;
     private final Properties properties;
     private final String siteURL;
     private final String driverLocation;
-    public final String email;
-    public final String password;
 
     private Configuration() {
         try {
@@ -25,8 +21,6 @@ public class Configuration {
         }
         siteURL = extractProperty(SITE_ADDRESS);
         driverLocation = extractProperty(DRIVER_LOCATION);
-        email = extractProperty(EMAIL);
-        password = extractProperty(PASSWORD);
     }
 
     private String extractProperty(String propertyName) {
@@ -56,11 +50,4 @@ public class Configuration {
         return driverLocation;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 }
