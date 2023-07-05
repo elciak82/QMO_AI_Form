@@ -23,7 +23,7 @@ public class DemoqaLoginPage extends GenericPage {
     @FindBy(css = "input[placeholder=\"Password\"]")
     WebElement password;
 
-    @FindBy(xpath = "//*[@id=\"password\"]") //does not work
+    @FindBy(xpath = "//*[@id=\"password\"]")
     WebElement passwordXpath;
 
     @FindBy(css = "#login")
