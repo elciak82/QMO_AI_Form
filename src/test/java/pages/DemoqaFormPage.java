@@ -72,45 +72,51 @@ public class DemoqaFormPage extends GenericPage {
     @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(1) label")
     WebElement sports;
 
-//    @FindBy(xpath = "#gender-radio-1")
-//    WebElement maleXpath;
+    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-1']")
+    WebElement sportsXpath;
 
     @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(2) label")
     WebElement reading;
 
-//    @FindBy(xpath = "#gender-radio-2")
-//    WebElement femaleXpath;
+    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-2']")
+    WebElement readingXpath;
 
     @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(3) label")
     WebElement music;
 
-//    @FindBy(xpath = "#gender-radio-2")
-//    WebElement otherXpath;
+    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-3']")
+    WebElement musicXpath;
 
-//    @FindBy(css = "#uploadPicture")
-    @FindBy(css = "[type='file']")
+    @FindBy(css = "#uploadPicture")
+//    @FindBy(css = "[type='file']")
     WebElement uploadPicture;
 
-//    @FindBy(xpath = "#userNumber")
-//    WebElement userNumberXpath;
+    @FindBy(xpath = "//div[@class='form-file']/input[@type='file']")
+    WebElement uploadPictureXpath;
 
     @FindBy(css = "#currentAddress")
     WebElement currentAddress;
 
-//    @FindBy(xpath = "#userNumber")
-//    WebElement dateOfBirthInputXpath;
+    @FindBy(xpath = "//div[@id='currentAddress-wrapper']/div[@class='col-md-9 col-sm-12']/textarea")
+    WebElement currentAddressXpath;
 
     @FindBy(css = "#react-select-3-input")
     WebElement state;
 
-//    @FindBy(xpath = "#userNumber")
-//    WebElement subjectsInputXpath;
+    @FindBy(xpath = "//div[@id='state']//input")
+    WebElement stateXpath;
 
     @FindBy(css = "#react-select-4-input")
     WebElement city;
 
-//    @FindBy(xpath = "#userNumber")
-//    WebElement subjectsInputXpath;
+    @FindBy(xpath = "//div[@id='city']//input")
+    WebElement cityXpath;
+
+    @FindBy(css = "button#submit")
+    WebElement submit;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    WebElement submitXpath;
 
     public void fillFirstNameField(String text) {
         firstName.sendKeys(text);
@@ -202,19 +208,22 @@ public class DemoqaFormPage extends GenericPage {
         music.click();
         System.out.println("Click on music checkbox (css) works.");
 
-//        male.click();
-//        System.out.println("Click on male radiobutton (css) works.");
-//
-//        female.click();
-//        System.out.println("Click on female radiobutton (css) works.");
-//
-//        other.click();
-//        System.out.println("Click on other radiobutton (css) works.");
+        sportsXpath.click();
+        System.out.println("Click on male checkbox (xpath) works.");
+
+        readingXpath.click();
+        System.out.println("Click on female checkbox (xpath) works.");
+
+        musicXpath.click();
+        System.out.println("Click on other checkbox (xpath) works.");
     }
 
-    public void clickUploadPictureButton () {
+    public void uploadPictureButtonIsDisplayed () {
         uploadPicture.isDisplayed();
         System.out.println("Button uploadPicture (css) is displayed.");
+
+        uploadPictureXpath.isDisplayed();
+        System.out.println("Button uploadPicture (xpath) is displayed.");
 
     }
 
@@ -222,20 +231,20 @@ public class DemoqaFormPage extends GenericPage {
         currentAddress.sendKeys(text);
         System.out.println(text + " is set for currentAddress field (css).");
         currentAddress.clear();
-//
-//        userNameXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for dateOfBirthInput field (xpath).");
-//        userNameXpath.clear();
+
+        currentAddressXpath.sendKeys(text);
+        System.out.println(text + " is set for currentAddress field (xpath).");
+        currentAddressXpath.clear();
     }
 
     public void fillStateField(String text) {
         state.sendKeys(text);
         System.out.println(text + " is set for state field (css).");
         state.clear();
-//
-//        userNameXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for dateOfBirthInput field (xpath).");
-//        userNameXpath.clear();
+
+        stateXpath.sendKeys(text);
+        System.out.println(text + " is set for state field (xpath).");
+        stateXpath.clear();
     }
 
     public void fillCityField(String text) {
@@ -244,9 +253,21 @@ public class DemoqaFormPage extends GenericPage {
         city.sendKeys(text);
         System.out.println(text + " is set for city field (css).");
         city.clear();
-//
-//        userNameXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for dateOfBirthInput field (xpath).");
-//        userNameXpath.clear();
+
+        stateXpath.sendKeys("ncr");
+        stateXpath.sendKeys(Keys.ENTER);
+        cityXpath.sendKeys(text);
+        System.out.println(text + " is set for city field (xpath).");
+        cityXpath.clear();
+    }
+
+    public void clickOnSubmitButton() throws InterruptedException {
+        submit.click();
+        System.out.println("Click on submit button (css) works.");
+        driver.navigate().refresh();
+
+        submitXpath.click();
+        System.out.println("Click on submit button (xpath) works.");
+        driver.navigate().refresh();
     }
 }

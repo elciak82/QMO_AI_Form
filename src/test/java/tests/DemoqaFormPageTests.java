@@ -98,12 +98,12 @@ public class DemoqaFormPageTests extends BaseTest {
     }
 
     @Test
-    public void clickUploadPictureTest() throws InterruptedException { //nie dziala
+    public void clickUploadPictureTest() throws InterruptedException {
         String title = menuComponent.getPageTitle();
         Assert.assertEquals(title, "DEMOQA");
 
         DemoqaFormPage demoqaFormPage = new DemoqaFormPage(driver);
-        demoqaFormPage.clickUploadPictureButton();
+        demoqaFormPage.uploadPictureButtonIsDisplayed();
         Thread.sleep(5000);
 
     }
@@ -137,6 +137,17 @@ public class DemoqaFormPageTests extends BaseTest {
 
         DemoqaFormPage demoqaFormPage = new DemoqaFormPage(driver);
         demoqaFormPage.fillCityField("City");
+        Thread.sleep(2000);
+
+    }
+
+    @Test
+    public void clickSubmitButtonTest() throws InterruptedException {
+        String title = menuComponent.getPageTitle();
+        Assert.assertEquals(title, "DEMOQA");
+
+        DemoqaFormPage demoqaFormPage = new DemoqaFormPage(driver);
+        demoqaFormPage.clickOnSubmitButton();
         Thread.sleep(2000);
 
     }
