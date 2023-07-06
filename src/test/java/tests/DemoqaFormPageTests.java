@@ -65,7 +65,7 @@ public class DemoqaFormPageTests extends BaseTest {
     }
 
     @Test
-    public void fillDateOfBirthInputFieldTest() throws InterruptedException {
+    public void clickOnDateOfBirthInputFieldTest() throws InterruptedException {
         String title = menuComponent.getPageTitle();
         Assert.assertEquals(title, "DEMOQA");
 

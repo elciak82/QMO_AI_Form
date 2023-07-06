@@ -1,10 +1,8 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -20,56 +18,56 @@ public class DemoqaFormPage extends GenericPage {
     @FindBy(css = "#firstName")
     WebElement firstName;
 
-//    @FindBy(xpath = "//input[@placeholder=\"UserName\"]")
-//    WebElement userNameXpath;
+    @FindBy(xpath = "//input[@placeholder='First Name']")
+    WebElement firstNameXpath;
 
     @FindBy(css = "#lastName")
     WebElement lastName;
 
-//    @FindBy(xpath = "//*[@id=\"password\"]")
-//    WebElement passwordXpath;
+    @FindBy(xpath = "//input[@placeholder='Last Name']")
+    WebElement lastNameXpath;
 
     @FindBy(css = "#userEmail")
     WebElement userEmail;
 
-//    @FindBy(xpath = "//button[text()=\"Login\"]")
-//    WebElement loginXpath;
+    @FindBy(xpath = "//input[@placeholder='name@example.com']")
+    WebElement userEmailXpath;
 
     @FindBy(css = "label[for='gender-radio-1']")
     WebElement male;
 
-//    @FindBy(xpath = "#gender-radio-1")
-//    WebElement maleXpath;
+    @FindBy(xpath = "//input[@value='Male']/following-sibling::label")
+    WebElement maleXpath;
 
     @FindBy(css = "label[for='gender-radio-2']")
     WebElement female;
 
-//    @FindBy(xpath = "#gender-radio-2")
-//    WebElement femaleXpath;
+    @FindBy(xpath = "//input[@value='Female']/following-sibling::label")
+    WebElement femaleXpath;
 
     @FindBy(css = "label[for='gender-radio-3']")
     WebElement other;
 
-//    @FindBy(xpath = "#gender-radio-2")
-//    WebElement otherXpath;
+    @FindBy(xpath = "//input[@value='Other']/following-sibling::label")
+    WebElement otherXpath;
 
     @FindBy(css = "#userNumber")
     WebElement userNumber;
 
-//    @FindBy(xpath = "#userNumber")
-//    WebElement userNumberXpath;
+    @FindBy(xpath = "//input[@placeholder='Mobile Number']")
+    WebElement userNumberXpath;
 
     @FindBy(css = "#dateOfBirthInput")
     WebElement dateOfBirthInput;
 
-//    @FindBy(xpath = "#userNumber")
-//    WebElement dateOfBirthInputXpath;
+    @FindBy(xpath = "//input[@class='form-control']")
+    WebElement dateOfBirthInputXpath;
 
     @FindBy(css = "#subjectsInput")
     WebElement subjectsInput;
 
-//    @FindBy(xpath = "#userNumber")
-//    WebElement subjectsInputXpath;
+    @FindBy(xpath = "//input[@type='text' and @tabindex='0']")
+    WebElement subjectsInputXpath;
 
     @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(1) label")
     WebElement sports;
@@ -118,10 +116,10 @@ public class DemoqaFormPage extends GenericPage {
         firstName.sendKeys(text);
         System.out.println(text + " is set for firstName field (css).");
         firstName.clear();
-//
-//        userNameXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for userName field (xpath).");
-//        userNameXpath.clear();
+
+        firstNameXpath.sendKeys(text);
+        System.out.println(text + " is set for firstName field (xpath).");
+        firstNameXpath.clear();
     }
 
     public void fillLastNameField(String text) {
@@ -129,18 +127,19 @@ public class DemoqaFormPage extends GenericPage {
         System.out.println(text + " is set for lastname field (css).");
         lastName.clear();
 
-//        passwordXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for password field (xpath).");
-//        passwordXpath.clear();
+        lastNameXpath.sendKeys(text);
+        System.out.println(text + " is set for lastname field (xpath).");
+        lastNameXpath.clear();
     }
 
     public void fillUserEmailField(String text) {
         userEmail.sendKeys(text);
         System.out.println(text + " is set for userEmail field (css).");
         userEmail.clear();
-//
-//        userEmail.click();
-//        System.out.println("Click on login button (xpath) works.");
+
+        userEmailXpath.sendKeys(text);
+        System.out.println(text + " is set for userEmail field (xpath).");
+        userEmailXpath.clear();
 
     }
 
@@ -154,43 +153,43 @@ public class DemoqaFormPage extends GenericPage {
         other.click();
         System.out.println("Click on other radiobutton (css) works.");
 
-//        male.click();
-//        System.out.println("Click on male radiobutton (css) works.");
-//
-//        female.click();
-//        System.out.println("Click on female radiobutton (css) works.");
-//
-//        other.click();
-//        System.out.println("Click on other radiobutton (css) works.");
+        maleXpath.click();
+        System.out.println("Click on male radiobutton (xpath) works.");
+
+        femaleXpath.click();
+        System.out.println("Click on female radiobutton (xpath) works.");
+
+        otherXpath.click();
+        System.out.println("Click on other radiobutton (xpath) works.");
     }
 
     public void fillUserNumberField(String text) {
         userNumber.sendKeys(text);
         System.out.println(text + " is set for userNumber field (css).");
         userNumber.clear();
-//
-//        userNameXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for userName field (xpath).");
-//        userNameXpath.clear();
+
+        userNumberXpath.sendKeys(text);
+        System.out.println(text + " is set for userNumber field (xpath).");
+        userNumberXpath.clear();
     }
 
     public void fillDateOfBirthField() {
         dateOfBirthInput.click();
         System.out.println("Click on other dateOfBirthInput (css) works.");
-//
-//        userNameXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for dateOfBirthInput field (xpath).");
-//        userNameXpath.clear();
+        userNumber.click();
+
+        dateOfBirthInputXpath.click();
+        System.out.println("Click on other dateOfBirthInput (xpath) works.");
     }
 
     public void fillSubjectsInputField(String text) {
         subjectsInput.sendKeys(text);
         System.out.println(text + " is set for subjectsInput field (css).");
         subjectsInput.clear();
-//
-//        userNameXpath.sendKeys(name);
-//        System.out.println("Test: " + name + " is set for dateOfBirthInput field (xpath).");
-//        userNameXpath.clear();
+
+        subjectsInputXpath.sendKeys(text);
+        System.out.println(text + " is set for subjectsInput field (xpath).");
+        subjectsInputXpath.clear();
     }
 
     public void clickHobbiesCheckboxes() {
