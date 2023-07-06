@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.awt.image.Kernel;
-
 public class DemoqaFormPage extends GenericPage {
 
     public DemoqaFormPage(WebDriver driver) {
@@ -33,22 +31,22 @@ public class DemoqaFormPage extends GenericPage {
     @FindBy(xpath = "//input[@placeholder='name@example.com']")
     WebElement userEmailXpath;
 
-    @FindBy(css = "label[for='gender-radio-1']")
+    @FindBy(css = "label[for='gender-radio-1']") //AI found and id selector, but element was not clickable at that point
     WebElement male;
 
-    @FindBy(xpath = "//input[@value='Male']/following-sibling::label")
+    @FindBy(xpath = "//input[@value='Male']/following-sibling::label") //AI found and id selector, but element was not clickable at that point
     WebElement maleXpath;
 
-    @FindBy(css = "label[for='gender-radio-2']")
+    @FindBy(css = "label[for='gender-radio-2']") //AI found and id selector, but element was not clickable at that point
     WebElement female;
 
-    @FindBy(xpath = "//input[@value='Female']/following-sibling::label")
+    @FindBy(xpath = "//input[@value='Female']/following-sibling::label") //AI found and id selector, but element was not clickable at that point
     WebElement femaleXpath;
 
-    @FindBy(css = "label[for='gender-radio-3']")
+    @FindBy(css = "label[for='gender-radio-3']") //AI found and id selector, but element was not clickable at that point
     WebElement other;
 
-    @FindBy(xpath = "//input[@value='Other']/following-sibling::label")
+    @FindBy(xpath = "//input[@value='Other']/following-sibling::label") //AI found and id selector, but element was not clickable at that point
     WebElement otherXpath;
 
     @FindBy(css = "#userNumber")
@@ -69,22 +67,22 @@ public class DemoqaFormPage extends GenericPage {
     @FindBy(xpath = "//input[@type='text' and @tabindex='0']")
     WebElement subjectsInputXpath;
 
-    @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(1) label")
+    @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(1) label") //AI found and id selector, but element was not clickable at that point
     WebElement sports;
 
-    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-1']")
+    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-1']") //AI found and id selector, but element was not clickable at that point
     WebElement sportsXpath;
 
-    @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(2) label")
+    @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(2) label") //AI found and id selector, but element was not clickable at that point
     WebElement reading;
 
-    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-2']")
+    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-2']") //AI found and id selector, but element was not clickable at that point
     WebElement readingXpath;
 
     @FindBy(css = ".custom-control.custom-checkbox.custom-control-inline:nth-child(3) label")
     WebElement music;
 
-    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-3']")
+    @FindBy(xpath = "//div[@class='custom-control custom-checkbox custom-control-inline']/label[@for='hobbies-checkbox-3']") //AI found and id selector, but element was not clickable at that point
     WebElement musicXpath;
 
     @FindBy(css = "#uploadPicture")
@@ -261,7 +259,7 @@ public class DemoqaFormPage extends GenericPage {
         cityXpath.clear();
     }
 
-    public void clickOnSubmitButton() throws InterruptedException {
+    public void clickOnSubmitButton() {
         submit.click();
         System.out.println("Click on submit button (css) works.");
         driver.navigate().refresh();
